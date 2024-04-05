@@ -1,0 +1,147 @@
+*
+	{
+    box-sizing: border-box;
+  }
+
+  body{
+    margin: 0;
+    height: 100vh;
+    background-color: rgb(246, 246, 246);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+	section{
+		width: 900px;
+		height: 900px;
+		display: flex;
+		flex-direction: column;
+
+	}
+
+	.box{
+		width: 200px;
+		height: 200px;
+		margin: 100px ;
+	}
+
+	.green-box{
+		align-self: center;
+		background-color: rgb(192, 192, 4);
+		position: relative;
+	}
+
+
+	.green-box::after{
+		content: '';
+		display: block;
+		width: 5px;
+		height: 100px;
+		background-color: black;
+		position: absolute;
+		bottom: -100px;
+		left: 50%;
+	}
+
+	.red-boxes{
+		display: flex;
+		justify-content: space-around;
+	}
+
+	.red-boxes div{
+		position: relative;
+		background-color: tomato;
+	}
+
+	.red-boxes div::before {
+		content: '';
+		display: block;
+		width: 5px;
+		height: 100px;
+		background-color: black;
+		position: absolute;
+		top: -100px;
+		left: 50%;
+	}
+
+	.red-box1::after {
+		content: '';
+		display: block;
+		width: 5px;
+		height: 229px;
+		background-color: black;
+		position: absolute;
+		top: -215px;
+		left: 107%;
+		transform: rotate(90deg);
+	}
+
+	.red-box2::after {
+		content: '';
+		display: block;
+		width: 5px;
+		height: 229px;
+		background-color: black;
+		position: absolute;
+		top: -215px;
+		left: -7%;
+		transform: rotate(90deg);
+	}
+
+		@media screen and (max-width: 1300px)
+		{
+			.box{margin: 16px;}
+			.green-box{transform: rotate(90deg);}
+			.red-boxes{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			.red-boxes div{
+				transform: rotate(-90deg);
+			}
+			
+			.red-box2::after{
+				left: 109%;
+				/* top: -215px; */
+				/* height: 230px; */
+			}
+		}
+		
+	
+	@media screen and (max-width: 1200px) {
+		.box{margin: 50px ;}
+		.red-boxes{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+		}
+
+		.red-boxes div::after{
+			content: '';
+			
+		}
+		.red-boxes div::after{
+			transform: none;
+			left: -75%;
+			top: -103%;
+			height: 303px;
+
+		}
+
+		.green-box::after, .red-boxes div::before{
+			transform: rotate(90deg);
+			left: -77px;
+			height: 149px;
+			top: 20px;
+			/* bottom: 30px; */
+
+			
+		}
+
+
+	}
+
