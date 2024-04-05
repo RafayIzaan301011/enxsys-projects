@@ -1,0 +1,159 @@
+*{
+    box-sizing: border-box;
+  }
+
+  body{
+    margin: 0;
+    background-color: rgb(246, 246, 246);
+    display: flex;
+    justify-content: center;
+  }
+
+  p{
+    line-height: 1.5;
+    font-size: 1.3rem;
+
+  }
+
+  .grid-container {
+    
+    display: grid;
+    grid-template-columns: repeat(3, minmax(280px, 1fr));
+    grid-template-areas: 'heading heading limit1'
+                         ' . limit2  limit3'
+                         ' . limit4 limit5';
+   
+    /* grid-gap: 30px; Adjust gap between items as needed */
+    gap: 1.5vw;
+    margin-top: 100px;
+    margin-left: 120px;
+    margin-right: 290px;
+    width: 70%;
+    margin-bottom: 1.2rem;
+  }
+  
+  .item {
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 20px;
+
+  }
+
+  .item > h2{
+    padding-left: 30px;
+  }
+
+    .item1 { grid-area: heading; }
+    .item2 { grid-area: limit1; }
+    .item3 { grid-area: limit2; float:right; transform: translateX(8.125rem);}
+    .item4 { grid-area: limit3; transform: translateX(8.125rem); }
+    .item5 { grid-area: limit4; transform: translateX(-5.25rem);}
+    .item6 { grid-area: limit5; transform: translateX(-5.25rem); }
+    
+    .heading {
+        display: flex;
+        flex-direction: column;
+          
+    }
+
+    .heading > h1{
+      font-size: 3em;
+    }
+
+    .heading p{     
+        padding-right: 4.5rem;
+        
+    }
+
+    .limit-p{
+      /* padding */
+    }
+
+
+
+    @media screen and (max-width: 1100px) {
+      .grid-container{
+        grid-template-areas: 'heading heading'
+                         '  limit1  limit2'
+                         '  limit3 limit4'
+                         '  limit5 .';
+                         grid-template-columns: repeat(2, minmax(12.4rem, 1fr));
+        margin: 10px;
+        width: 90%;
+        height: 90%;   
+      }
+
+      p{
+        padding: 1px;
+      }
+
+      .heading{
+        text-align: center;
+      }
+
+      .heading p{     
+        padding: 0px;  
+    }
+
+      .item{
+        transform: translateX(0px);
+        padding: 0px;
+        padding-left: 30px;
+        padding-right: 3s0px;
+      }
+
+      .item6{
+        position: relative;
+        left: 50%;
+      }
+    }
+
+
+
+    @media screen and (max-width: 528px) {
+      .grid-container{
+        grid-template-areas: 'heading'
+                         '  limit1'
+                         '  limit2 '
+                         '  limit3 '
+                         '  limit4 '
+                         '  limit5 '
+                         '  limit6 ';
+                         grid-template-columns: repeat(1, 1fr);
+        margin: 10px;
+        width: 99%;
+      }
+
+      .item6{ left: 0px;}
+    }
+
+
+   
+  
+
+          
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* .grid-item:nth-child(5){
+    
+    background-color: aqua;
+    position: relative;
+    left: 10px;
+    
+} */
+
